@@ -406,7 +406,7 @@ class IrModel(models.Model):
             _module = False
             _custom = True
             _transient = bool(model_data['transient'])
-            _order = model_data['order']
+            _order = model_data.get('order', False)
             __doc__ = model_data['info']
 
         return CustomModel
